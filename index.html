@@ -1,0 +1,754 @@
+<!--
+Google IO 2012/2013 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="logoslide nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/google_developers_logo.png"></span>
+    </article>
+  </slide>
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Começando pelo começo</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>O que é a internet ?</li>
+        <li>O que é uma URL ?</li>
+        <li>Como um site vem da internet até o meu computador ?</li>
+      </ul>
+      <article class="flexbox vcenter build">
+        <img src="images/barchart.png" alt="Description" title="Description">
+        <footer class="source">processo de requisição de um site</footer>
+      </article>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Camadas</h2>
+    </hgroup>
+    <article>
+      <article class="flexbox vcenter build">
+        <img src="images/layers.png" alt="Description" title="Description">
+        <footer class="source">Camadas de uma página</footer>
+      </article>
+    </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>HTML</h2>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>HTML</h2>
+    </hgroup>
+    <article class="smaller">
+      <ul>
+        <li><b>H</b>yper<b>T</b>ext <b>M</b>arkup <b>L</b>anguage</li>
+        <li>É a camada principal de um site</li>
+        <li>Relaciona com todas as outras camadas</li>
+        <li>Camada do conteúdo em si, aqui estão todas as informações que vão ser exibidas para o usuário</li>
+        <li>O HTML é feito de um conjunto de etiquetas de conteúdo que marcam qual parte do texto é o que.</li>
+      </ul>
+      <pre class="prettyprint" data-lang="html">
+        <b>&lt;a</b> <b>href</b>="http://www.google.com" <b>id</b>="link" <b>class</b>="primario"&gt;
+          Fonte: wikipedia
+        &lt;/a&gt;
+      </pre>
+      <p>O atributo <b>id</b> define o nome único para essa etiqueta, enquanto o <b>class</b>
+        define o comportamento que ele vai ter no nosso site.</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>HTML</h2>
+      <h3>Cabeça, tronco e membros</h3>
+    </hgroup>
+    <article>
+      <p>O HTML é dividido em duas partes principais, a cabeça (<b>&lt;head&gt;</b>) e o corpo (<b>&lt;body&gt;</b>)</p>
+      <pre class="prettyprint" data-lang="html">
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        <b>&lt;head&gt;
+
+        &lt;/head&gt;</b>
+
+        <b>&lt;body&gt;
+
+        &lt;/body&gt;</b>
+        &lt;/html&gt;
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Cabeça</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article class="smaller">
+      <p>No <b>&lt;head&gt;</b> é localizado tudo que não é relacioado
+        diretamente a conteúdo, como o título que a página tem para o navegador</p>
+      <pre class="prettyprint" data-lang="html">
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+        &lt;head&gt;
+          <b>&lt;title&gt;Cidades mais populosas do mundo&lt;/title&gt;</b>
+        &lt;/head&gt;
+
+        &lt;body&gt;
+
+        &lt;/body&gt;
+        &lt;/html&gt;
+      </pre>
+      <p class="smaller"><a href="exemplos/00.html">exemplo</a></p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Tronco e membros</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article>
+      <p>No <b>&lt;body&gt;</b> temos o que vai ser exibido para na tela do usuário</p>
+      <pre class="prettyprint" data-lang="html">
+        &lt;body&gt;
+          Olá mundo!
+        &lt;/body&gt;
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Parágrafos</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article>
+      <p>Para informar o navegador quando deve existir uma quebra em um conteúdo de texto, temos os parágrafos.</p>
+      <pre class="prettyprint" data-lang="html">
+        &lt;body&gt;
+          Olá mundo!
+        &lt;/body&gt;
+      </pre>
+    </article>
+  </slide>
+
+    <slide>
+      <hgroup>
+        <h2>Parágrafos</h2>
+        <h3>HTML</h3>
+      </hgroup>
+      <article>
+        <iframe data-src="exemplos/01.html"></iframe>
+      </article>
+    </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Parágrafos</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article>
+      <p>Para informar o navegador quando deve existir uma quebra em um conteúdo de texto, temos os parágrafos.</p>
+      <pre class="prettyprint" data-lang="html">
+        &lt;body&gt;
+          Olá mundo!
+          Lorem ipsum dolor sit amet!
+        &lt;/body&gt;
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Parágrafos</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article>
+      <iframe data-src="exemplos/01-a.html"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Parágrafos</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article>
+      <p>Para informar o navegador quando deve existir uma quebra em um conteúdo de texto, temos os parágrafos.</p>
+      <pre class="prettyprint" data-lang="html">
+        &lt;body&gt;
+          &lt;p&gt;Olá mundo!&lt;/p&gt;
+          &lt;p&gt;Lorem ipsum dolor sit amet!&lt;/p&gt;
+        &lt;/body&gt;
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Parágrafos</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article>
+      <iframe data-src="exemplos/01-b.html"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Formatação</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article>
+      <p>Você pode mudar a importância de um texto com as tags de <b>ênfase</b> (<b>&lt;em&gt;</b>) e <b>força</b> (<b>&lt;strong&gt;</b>).</p>
+      <pre class="prettyprint" data-lang="html">
+        &lt;body&gt;
+          &lt;p&gt;Olá mundo!&lt;/p&gt;
+          &lt;p&gt;Lorem <b>&lt;strong&gt;ipsum&lt;/strong&gt;</b> dolor <b>&lt;em&gt;sit&lt;/em&gt;</b> amet!&lt;/p&gt;
+        &lt;/body&gt;
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Formatação</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article>
+      <iframe data-src="exemplos/02.html"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Títulos</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article class="smaller">
+      <p>Com o parágrafo temos uma exibição padrão de textos, precisamos agora definir os titulos da nossa página.</p>
+      <p>Eles são <b>h1</b>, <b>h2</b>, <b>h3</b>, <b>h4</b>, <b>h5</b> e <b>h6</b>, com o <b>h1</b> sendo o mais importante e o <b>h6</b> o menos.</p>
+      <pre class="prettyprint" data-lang="html">
+        &lt;body&gt;
+          <b>&lt;h1&gt;Olá mundo!&lt;/h1&gt;</b>
+          <b>&lt;h2&gt;Vestibulum eu odio&lt;/h2&gt;</b>
+          &lt;p&gt;Lorem &lt;strong&gt;ipsum&lt;/strong&gt; dolor &lt;em&gt;sit&lt;/em&gt; amet!&lt;/p&gt;
+        &lt;/body&gt;
+      </pre>
+      <p>O <b>h1</b> deve existir apenas uma vez na página para definir qual o título mais importante. Os outros podem se repetir.</p>
+      <p>Todos os títulos devem seguir uma hierarquia, sendo que um <b>h3</b> tem que ser um sub-titulo de um <b>h2</b>.</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Títulos</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article>
+      <iframe data-src="exemplos/03.html"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Listas</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article class="smaller">
+      <p>Para melhor caracterizar o conteúdo de uma lista temos duas opções de marcação,&lt;ul&gt; e &lt;ol&gt; </p>
+      <h3>&lt;ul&gt;</p>
+      <p>É uma lista <b>não ordenada</b>, que só apresenta os items (&lt;li&gt;), sem distinção.</p>
+      <pre class="prettyprint" data-lang="html">
+        &lt;body&gt;
+          <b>&lt;ul&gt;</b>
+            &lt;li&gt;Xangai&lt;/li&gt;
+            &lt;li&gt;Lagos&lt;/li&gt;
+            &lt;li&gt;Karachi&lt;/li&gt;
+            &lt;li&gt;Istambul&lt;/li&gt;
+            &lt;li&gt;Mumbai&lt;/li&gt;
+          <b>&lt;/ul&gt;</b>
+        &lt;/body&gt;
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Listas</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article>
+      <iframe data-src="exemplos/04.html"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Listas</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article class="smaller">
+      <h3>&lt;ol&gt;</p>
+      <p>É uma lista <b>ordenada</b>, que apresenta os items (&lt;li&gt;), com uma marcação de sequência.</p>
+      <pre class="prettyprint" data-lang="html">
+        &lt;body&gt;
+          <b>&lt;ol&gt;</b>
+            &lt;li&gt;Xangai&lt;/li&gt;
+            &lt;li&gt;Lagos&lt;/li&gt;
+            &lt;li&gt;Karachi&lt;/li&gt;
+            &lt;li&gt;Istambul&lt;/li&gt;
+            &lt;li&gt;Mumbai&lt;/li&gt;
+          <b>&lt;/ol&gt;</b>
+        &lt;/body&gt;
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Listas</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article>
+      <iframe data-src="exemplos/04-a.html"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Links</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article class="smaller">
+      <p>Por enquanto estamos só mostrando conteúdo em uma unica página. Para que o usuário chegue de uma página a outra
+        temos uma tag de link <b>&lt;a&gt;</b></p>
+      <p>O <b>href</b> é o atributo que informa para onde este link vai.</p>
+      <pre class="prettyprint" data-lang="html">
+        &lt;body&gt;
+          <b>&lt;a href="http://www.google.com.br/"&gt;</b>
+            Google
+          <b>&lt;/a&gt;</b>
+        &lt;/body&gt;
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Listas</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article>
+      <iframe data-src="exemplos/05.html"></iframe>
+    </article>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>Imagens</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article class="smaller">
+      <p>Uma imagem fala mais do que mil palavras, então vamos começar a mostrar
+        algumas imagens no nosso site</p>
+      <p>A tag <b>&lt;img&gt;</b> é usada para inserir imagens documento, podemos
+        definir o tamanho (width) e a altura (height) que ela vai ter na tela do usuário</p>
+      <pre class="prettyprint" data-lang="html">
+        &lt;body&gt;
+          <b>&lt;img src="../images/imagem.gif"&gt;</b>
+        &lt;/body&gt;
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Imagens</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article>
+      <iframe data-src="exemplos/06.html"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Juntando tudo em um só lugar</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article class="smaller">
+      <pre class="prettyprint" data-lang="html">
+        &lt;body&gt;
+          &lt;h1&gt;Cidades mais populosas do mundo&lt;/h1&gt;
+
+          &lt;p&gt;Esta é uma &lt;strong&gt;lista das cidades&lt;/strong&gt; mais &lt;em&gt;populosas do mundo&lt;/em&gt;.&lt;/p&gt;
+          &lt;img src="../images/xangai.jpg" width="500"&gt;
+          &lt;ol&gt;
+            &lt;li&gt;Xangai&lt;/li&gt;
+            &lt;li&gt;Lagos&lt;/li&gt;
+            &lt;li&gt;Karachi&lt;/li&gt;
+            &lt;li&gt;Istambul&lt;/li&gt;
+            &lt;li&gt;Mumbai&lt;/li&gt;
+            &lt;li&gt;Moscou&lt;/li&gt;
+            &lt;li&gt;São Paulo&lt;/li&gt;
+            &lt;li&gt;Pequim&lt;/li&gt;
+            &lt;li&gt;Cantão&lt;/li&gt;
+            &lt;li&gt;Delhi&lt;/li&gt;
+          &lt;/ol&gt;
+
+          &lt;p&gt;&lt;a href="https://pt.wikipedia.org/"&gt;Fonte: wikipedia&lt;/a&gt;&lt;/p&gt;
+
+        &lt;/body&gt;
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Juntando tudo em um só lugar</h2>
+      <h3>HTML</h3>
+    </hgroup>
+    <article>
+      <iframe data-src="exemplos/07.html"></iframe>
+    </article>
+  </slide>
+
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>CSS</h2>
+    </hgroup>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>CSS</h2>
+    </hgroup>
+    <article>
+      <p><b>C</b>ascading <b>S</b>tyles <b>S</b>heets</p>
+      <p>É como nós estilizamos o conteúdo de um documento HTML, afinal a
+        internet não precisa ser somente branco e preto.</p>
+      <p>Sua estrutura é diferente da do HTML, no CSS nós vamos definir a cor, tipo de fonte e toda
+        a apresentação que a página vai ter.</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Aplicando o CSS</h2>
+      <h3>CSS</h3>
+    </hgroup>
+    <article>
+      <p>Para aplicar o css nós podemos defini-lo direto na etiqueta:</p>
+      <pre class="prettyprint" data-lang="html">
+        &lt;p <b>style="color: red"</b>&gt;texto&lt;/p&gt;
+      </pre>
+      <p>Não é recomendado, pois todo os estilos estão direto no conteúdo do site, é preferivel ter uma definição de css.</p>
+      <pre class="prettyprint" data-lang="html">
+        &lt;head&gt;
+          &lt;style&gt;
+            p {
+                color: red;
+            }
+          &lt;/style&gt;
+        &lt;/head&gt;
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Aplicando o CSS</h2>
+      <h3>CSS</h3>
+    </hgroup>
+    <article>
+      <p>O metodo mais usado para aplicar folhas de estilo é importar um arquivo externo</p>
+      <pre class="prettyprint" data-lang="html">
+        &lt;head&gt;
+          &lt;title&gt;Cidades mais populosas do mundo&lt;/title&gt;
+          <b>&lt;link rel="stylesheet" media="all" href="estilo.css"&gt;</b>
+        &lt;/head&gt;
+      </pre>
+      <p>Desta maneira nós conseguimos colocar em apenas um arquivo todo o css
+        que vai ser usado em todo o site, sem precisar ficar duplicando conteúdo em várias páginas.</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Seletores, propriedades e valores</h2>
+      <h3>CSS</h3>
+    </hgroup>
+    <article class="smaller">
+      <p>Um <b>seletor</b> é como do CSS nós identificamos um elemento do HTML.
+        Ele pode utiizar o <b>nome</b> do elemento, seu <b>id</b> ou sua <b>classe</b>.</p>
+      <p>Para cada <b>seletor</b> existem <b>propriedades</b> dentro de chaves que
+      vão ser expressos por palavras simples, como <b>color</b>, <b>font-weight</b> ou <b>border</b>.</p>
+      <p>Um <b>valor</b> é dado para cada propriedada definindo como ela vai se comportar.</p>
+      <pre class="prettyprint" data-lang="css">
+      body {
+        font-size: 14px;
+        color: navy;
+      }
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Cores</h2>
+      <h3>CSS</h3>
+    </hgroup>
+    <article class="smaller">
+      <p>O css tem uma paleta de cores com 16 777 216 opções, podendo ser definidas por <b>nome</b>,
+      <b>hexa</b> ou <b>rgb</b></p>
+
+      <ul>
+        <li class="red"><b>red</b></li>
+        <li class="red"><b>rgb(255,0,0)</b></li>
+        <li class="red"><b>rgb(100%,0%,0%)</b></li>
+        <li class="red"><b>#ff0000</b></li>
+        <li class="red"><b>#f00</b></li>
+      </ul>
+
+      <pre class="prettyprint" data-lang="css">
+      h1 {
+          color: #ffc;
+          background-color: #009;
+      }
+
+      p {
+         color: rgb(100%,0%,0%);
+      }
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Texto</h2>
+      <h3>CSS</h3>
+    </hgroup>
+    <article class="smaller">
+      <p>Com estas propriedades é possivel alterar a forma e o tamanho do texto.</p>
+
+      <h3>font-family</h3>
+      <p>A fonte que vai ser usada, como Arial, Helvetica ou Comic Sans</p>
+
+      <h3>font-size</h3>
+      <p>O tamanho que o texto vai ser exibido</p>
+
+      <h3>font-weight</h3>
+      <p>O peso que a fonte vai ser exibida. Essa é uma propriedade mais nova, não sendo aceita por navegadores antigos.</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Texto</h2>
+      <h3>CSS</h3>
+    </hgroup>
+    <article class="smaller">
+      <h3>font-style</h3>
+      <p>O estilo da fonte, se está em italico ou não</p>
+
+      <h3>text-decoration</h3>
+
+      <p>"Decora" a fonte com uma linha que pode</p>
+
+      <ul>
+        <li><b>text-decoration: underline</b> sublinha o texto.</li>
+        <li><b>text-decoration: overline</b> coloca uma linha sobre o texto.</li>
+        <li><b>text-decoration: line-through</b> cola uma linha no texto, ricando o conteúdo.</li>
+      </ul>
+
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Texto</h2>
+      <h3>CSS</h3>
+    </hgroup>
+    <article class="smaller">
+      <h3>text-transform</h3>
+
+      <p>Altera a capitalização do texto</p>
+
+      <ul>
+        <li><b>text-transform: capitalize</b> faz com que a primeira letra esteja maiúscula.</li>
+        <li><b>text-transform: uppercase</b> faz com que a todas letra estejam maiúsculas.</li>
+        <li><b>text-transform: lowercase</b> faz com que a todas letra estejam minúsculas.</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Espaçamento de Texto</h2>
+      <h3>CSS</h3>
+    </hgroup>
+    <article class="smaller">
+      <p>Temos algumas propriedades que são especificas para trabalhar com o espaçamento de texto.</p>
+
+      <p><code>letter-spacing</code> e <code>word-spacing</code></a> são para definir o espaçamento entre letras ou palavra.</p>
+      <p><code>line-height</code> define o tamanho que a linha vai ter, sem alterar o tamanho que a fonte vai ter.</p>
+      <p><code>text-align</code> troca o alinhamento padrão do texto, podendo ser para a esquerda, direita ou centralizado.</p>
+      <p><code>text-indent</code> trata da identação da primeira linha de um parágrafo.</p>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Texto</h2>
+      <h3>CSS</h3>
+    </hgroup>
+    <article class="smaller">
+      <pre class="prettyprint" data-lang="css">
+        body {
+            font-family: arial, helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+        h1 {
+          text-align: center;
+          font-size: 2em;
+          text-decoration: undeline;
+          background-color: #CCC;
+        }
+
+        strong {
+            font-style: italic;
+            text-transform: uppercase;
+            color: #f00;
+        }
+
+        p {
+            letter-spacing: 0.5em;
+            word-spacing: 2em;
+            line-height: 1.5;
+        }
+      </pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Texto</h2>
+      <h3>CSS</h3>
+    </hgroup>
+    <article>
+      <iframe data-src="exemplos/08.html"></iframe>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Margem, Padding e Bordas</h2>
+      <h3>CSS</h3>
+    </hgroup>
+    <article class="smaller">
+      <p>Uma das propriedades mais usadas para definir o tamanho dos elementos.</p>
+      <p>A <b>margin</b> é o espaço fora do elemento, enquando o <b>padding</b> é o espaço dentro. A borda fica entre eles.</p>
+
+      <article class="flexbox vcenter">
+        <img src="images/boxmodel.png" alt="Description" title="Description">
+      </article>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>HTML + CSS</h2>
+    </hgroup>
+    <article>
+      <iframe data-src="exemplos/09.html"></iframe>
+    </article>
+  </slide>
+
+  <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>Obrigado!!</h2>
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+  <slide class="logoslide dark nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/google_developers_logo_white.png"></span>
+    </article>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
